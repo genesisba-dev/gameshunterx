@@ -43,6 +43,7 @@ body{
 	min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la vista */
 	align-items: stretch;
 	gap: 10px;
+	/* flex-direction: column; apila verticalmente */
 }
 #menu{
 	width:7%;
@@ -219,37 +220,30 @@ td{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-.juego-detalle{
-	width: 70%;
-	max-width: 750px;
-	border: 2px solid #d30101;
-	margin: 15px auto;
-	padding: 5px;
-	box-sizing: border-box;
-	display: flex; /* habilita diseno de columna */
-	gap: 20px; /* espacio entre imagen y texto */
+.seccion-deseos {
+    display: flex;
+    gap: 30px; /* Espacio entre las dos columnas */
+    padding: 10px;
+    margin: 0 auto;
 }
-.juego-detalle img{
-	margin: 0px auto 0px 10px;
-	max-width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
+.jugados { /* estilo del cuadro */
+    flex: 1 1 50%;
+    background-color: #000000;
+    border: 1px solid #ff0000;
+    padding: 20px;
+    width: fit-content; /* El ancho se ajusta automáticamente al contenido más largo */
+    max-width: 100%; 
 }
-.resumo{
-	color: #ffffff;
-	flex-grow: 1; /* permite que el texto ocupe el espacio restante */
-	align-items: center; /* alinea verticalmente - imagen y texto*/
-}
-.juego{
-	max-width: 30%;
-	flex-shrink: 0; /* evita que se encoja si no hay espacio */
+.lista-jugados{
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0; /* Quita el padding predeterminado */
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff;
 
 }
-.juego img{
-	max-width: 100%;
-	height: auto;
-	display: block;
+.lista-jugados h2{
+	color: #ffffff;
 }
 #rodape{
 	padding: 1px;
@@ -264,9 +258,9 @@ td{
 			
 			/* Menú: Ocupa todo el ancho en móvil */
 			#menu {
-				width: 100%;
+				width: 20%;
 				height: auto; /* La altura debe fluir con el contenido */
-				padding: 5px;
+				padding: 2px;
 				order: -1; /* Opcional: para que se coloque primero si usas Flex/Grid */
 			}
 			
@@ -297,8 +291,8 @@ td{
 			
 			/* Ajusta las imágenes del menú para que no sean tan grandes en la barra superior/inferior */
 			#menu img {
-				height: 50px;
-				width: 50px;
+				height: 40px;
+				width: 40px;
 			}
 			
 			/* Ajusta la tabla (Streams) si tiene problemas de desbordamiento */
@@ -322,11 +316,5 @@ td{
 				margin: 10px auto; /* Centra los elementos apilados */
 				flex-basis: auto; /* Permite que el ancho lo determine el 98% */
 			}
-			/* Asegúrate de que los elementos de las fotos se ajusten */
-			.foto, .resumo {
-				width: 100%;
-				float: none;
-				margin-right: 0;
-				margin-bottom:10px;
-				}
+			
 			}
